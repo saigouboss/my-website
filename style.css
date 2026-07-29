@@ -1,0 +1,746 @@
+ /*
+ ===================================
+   基本設定
+ ===================================
+ */
+
+
+/* ページ全体 */
+* {
+
+    /* サイズ計算を分かりやすくする */
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    /* スクロールを滑らかにする */
+    scroll-behavior: smooth;
+
+}
+
+
+
+body {
+
+
+    /* 背景色 */
+    background-color: #1c1c1c;
+
+
+    /* 文字色 */
+    color: white;
+
+
+    /* Google Fonts */
+    font-family: 'Orbitron', sans-serif;
+
+
+    margin: 0;
+
+
+    line-height: 1.7;
+
+
+}
+
+
+
+
+
+
+/*
+ ===================================
+   ヘッダー部分
+ ===================================
+*/
+
+
+.hero {
+
+
+    min-height: 100vh;
+
+
+    /* 中央配置 */
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+
+
+    text-align: center;
+
+
+
+    /*
+      背景に少し青い光を追加
+      eスポーツ風の雰囲気
+    */
+
+    background:
+
+    radial-gradient(
+        circle,
+        rgba(100,149,237,0.3),
+        transparent 40%
+    );
+
+}
+
+
+
+
+.hero h1 {
+
+
+    font-size: clamp(2.5rem, 8vw, 5rem);
+
+
+    color: white;
+
+
+    /*
+      ネオン風の光
+    */
+
+    text-shadow:
+
+    0 0 5px #6495ed,
+
+    0 0 20px #6495ed,
+
+    0 0 40px #6495ed;
+
+}
+
+
+
+
+.hero p {
+
+
+    color: #6495ed;
+
+
+    font-size: 1.2rem;
+
+}
+
+
+
+
+
+
+/*
+ ===================================
+   ボタン
+ ===================================
+*/
+
+
+.game-button {
+
+
+    display: inline-block;
+
+
+    margin-top: 20px;
+
+
+    padding: 12px 35px;
+
+
+
+    color:white;
+
+
+
+    background-color:#6495ed;
+
+
+
+    border-radius:30px;
+
+
+
+    text-decoration:none;
+
+
+
+    font-weight:bold;
+
+
+
+    /*
+       光る効果
+    */
+
+    box-shadow:
+
+    0 0 10px #6495ed;
+
+
+
+    transition:0.3s;
+
+
+
+}
+
+
+
+.game-button:hover {
+
+
+    transform:scale(1.1);
+
+
+
+    box-shadow:
+
+    0 0 25px #6495ed;
+
+
+
+}
+
+
+
+
+
+
+
+/*
+ ===================================
+   メイン
+ ===================================
+*/
+
+
+main {
+
+
+    width:90%;
+
+
+    max-width:1000px;
+
+
+
+    margin:auto;
+
+
+    padding:50px 0;
+
+
+
+}
+
+
+
+
+
+
+/*
+ ===================================
+   ガラス風カード
+ ===================================
+*/
+
+
+.card {
+
+    margin-bottom:40px;
+
+    padding:35px;
+
+
+    /*
+    高級感のある黒系カード
+    */
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,0.08),
+        rgba(0,0,0,0.7)
+    );
+
+
+
+    /*
+    青い金属感のある境界線
+    */
+
+    border:
+
+    1px solid
+
+    rgba(100,149,237,0.4);
+
+
+
+    border-radius:18px;
+
+
+
+    /*
+    深みのある影
+    */
+
+    box-shadow:
+
+
+    0 15px 40px
+
+    rgba(0,0,0,0.6),
+
+
+    0 0 20px
+
+    rgba(100,149,237,0.15);
+
+
+
+    transition:0.4s;
+
+
+
+}
+
+
+
+
+.card:hover {
+
+
+    transform:
+
+    translateY(-8px);
+
+
+
+    border-color:
+
+    #6495ed;
+
+
+
+    box-shadow:
+
+
+    0 20px 50px
+
+    rgba(0,0,0,0.8),
+
+
+    0 0 30px
+
+    rgba(100,149,237,0.5);
+
+
+
+}
+
+
+
+
+
+/*
+ ===================================
+   見出し
+ ===================================
+*/
+
+
+h2 {
+
+
+    color:white;
+    
+    
+    letter-spacing:2px;
+    
+    
+    text-shadow:
+    
+    0 0 5px #6495ed,
+    
+    0 0 20px rgba(100,149,237,0.8);
+    
+    
+    
+    }
+
+
+
+
+h3 {
+
+
+    color:#6495ed;
+
+
+}
+
+
+
+
+
+
+/*
+ ===================================
+   ゲーム経歴カード
+ ===================================
+*/
+
+
+.game-list {
+
+
+    display:grid;
+
+
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(250px,1fr));
+
+
+
+    gap:20px;
+
+
+
+}
+
+
+
+/*
+=============================
+ GAME HISTORY タイムライン
+=============================
+*/
+
+
+.timeline {
+
+
+    position:relative;
+
+
+    margin-left:20px;
+
+
+    padding-left:30px;
+
+
+}
+
+
+/*
+縦の光るライン
+*/
+
+.timeline::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    left:0;
+
+
+    top:0;
+
+
+    width:3px;
+
+
+    height:100%;
+
+
+    background:#6495ed;
+
+
+    box-shadow:
+
+    0 0 15px #6495ed;
+
+
+}
+
+
+
+
+.timeline-item {
+
+
+    position:relative;
+
+
+    margin-bottom:35px;
+
+
+    padding:20px;
+
+
+    background:
+
+    rgba(0,0,0,0.35);
+
+
+    border-radius:12px;
+
+
+    border-left:
+
+    3px solid #6495ed;
+
+
+
+    transition:0.3s;
+
+
+}
+
+
+
+
+
+.timeline-item::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    left:-43px;
+
+
+    top:25px;
+
+
+    width:15px;
+
+
+    height:15px;
+
+
+    background:#6495ed;
+
+
+    border-radius:50%;
+
+
+    box-shadow:
+
+    0 0 15px #6495ed;
+
+
+}
+
+
+
+
+
+.timeline-item:hover {
+
+
+    transform:
+
+    translateX(10px);
+
+
+
+    border-color:white;
+
+
+}
+
+
+
+
+
+.timeline-item h3 {
+
+
+    color:#6495ed;
+
+
+    margin-top:0;
+
+
+}
+    
+    
+    
+    .game-item:hover {
+    
+    
+    transform:
+    
+    scale(1.03);
+    
+    
+    
+    border-color:
+    
+    #6495ed;
+    
+    
+    }
+
+
+
+
+
+
+
+
+/*
+ ===================================
+   リスト
+ ===================================
+*/
+
+
+li {
+
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+
+
+
+/*
+ ===================================
+   フッター
+ ===================================
+*/
+
+
+footer {
+
+
+    text-align:center;
+
+
+
+    padding:20px;
+
+
+
+    background:#111;
+
+
+
+    color:#aaa;
+
+
+
+}
+
+
+
+
+
+
+
+/*
+ ===================================
+   スマホ対応
+ ===================================
+*/
+
+
+@media(max-width:600px){
+
+
+
+    .card{
+
+
+        padding:20px;
+
+
+    }
+
+
+
+    h2{
+
+
+        font-size:1.3rem;
+
+
+    }
+
+
+
+    .hero p{
+
+
+        font-size:1rem;
+
+
+    }
+
+    /*
+===================================
+ JavaScript用 アニメーション
+===================================
+*/
+
+
+.card {
+
+
+    /*
+    最初は少し下に隠す
+    */
+
+    opacity:0;
+
+
+    transform:translateY(50px);
+
+
+}
+
+
+
+
+.card.show {
+
+
+    /*
+    表示状態
+    */
+
+    opacity:1;
+
+
+    transform:translateY(0);
+
+
+
+}
+
+}
